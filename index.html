@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Search - Minimal</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Link to custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- App Header -->
+    <header class="app-header">
+        <div class="header-container">
+            <div>
+                <h1 class="logo">📚 Book Search</h1>
+                <p class="subtitle">Find your next book</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Search Section -->
+        <section class="controls-section">
+            <div class="search-bar-wrapper">
+                <input type="text" id="searchInput" placeholder="Search for books by title, author, or keyword..." class="search-input">
+                <button id="searchBtn" class="primary-btn">Search</button>
+            </div>
+        </section>
+
+        <!-- Dynamic Results Area -->
+        <section class="results-section">
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="loading-state hidden">
+                <div class="spinner"></div>
+                <p>Searching Open Library...</p>
+            </div>
+
+            <!-- Empty / Error State -->
+            <div id="emptyState" class="empty-state hidden">
+                <div class="empty-icon">📂</div>
+                <h2 id="emptyStateMessage">No books found.</h2>
+                <p id="emptyStateSubMessage">Try searching for a different keyword.</p>
+            </div>
+
+            <!-- Books Grid -->
+            <div id="booksGrid" class="books-grid">
+                <!-- Book Cards will be dynamically injected here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Link to custom JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
