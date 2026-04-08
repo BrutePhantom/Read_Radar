@@ -1,165 +1,134 @@
-# Read_Radar
-A smart book discovery website that lets users search books by title, author, category, or even a line from the book using Open Library APIs.
-
-Here’s your updated **README.md** with the Open Library APIs properly added in a clean, professional way 👇
-
----
-
 # 📚 BookVerse – Smart Book Collection Website
 
 ## 🚀 Project Overview
 
-**BookVerse** is a web application designed to help users explore, search, and organize a collection of books efficiently. The platform allows users to browse books by different filters such as author, category, and more.
+**BookVerse** is a simple web application that helps users explore and search for books. Users can find books by title, author, category, or even by typing a line from the book.
 
-This project is built as part of a **Web Application Programming (WAP)** course by a first-year university student.
+This project is created as part of a **Web Application Programming (WAP)** course using basic web development technologies.
 
 ---
 
 ## ✨ Features
 
-### 🔍 Smart Book Search
+### 🔍 Search Books
 
-* Search books by title, author, or keywords
-* **Unique feature:** Find a book by typing a *line from the book*
+* Search books by:
 
-### 📂 Sorting & Filtering
+  * Title
+  * Author
+  * Keywords
+* **Special feature:** Search books using a line from the book
+
+---
+
+### 📂 Sort & Filter
 
 * Sort books by:
 
-  * Author
   * Title
-  * Popularity (optional)
-* Filter by:
+  * Author
+* Filter books by:
 
-  * Categories (Fiction, Non-fiction, Sci-Fi, etc.)
-  * Authors
+  * Category (Fiction, Sci-Fi, etc.)
+
+---
 
 ### 📖 Book Details
 
-* View detailed information:
+* Displays:
 
-  * Title
-  * Author
+  * Book title
+  * Author name
   * Category
-  * Description
-  * Ratings (optional)
+  * Book cover
 
-### ❤️ User-Friendly UI
+---
 
-* Clean and responsive design
-* Easy navigation
+### 🎨 Simple UI
+
+* Built using basic HTML and CSS
+* Clean and easy-to-use interface
 
 ---
 
 ## 🌐 APIs Used
 
-This project uses the **Open Library APIs** to fetch real-time book data.
+This project uses **Open Library APIs** to get book data.
 
-### 📚 Core APIs
+### APIs:
 
-* **Book Search API**
-  → Search results for books, authors, and more
-
-* **Search Inside API**
-  → Search for matching text within millions of books (used for line-based search feature)
-
-* **Covers API**
-  → Fetch book covers using ISBN or Open Library ID
-
----
-
-### 👤 User & Lists APIs
-
-* **Your Books API**
-  → Retrieve books from a user's public reading log
-
-* **Lists API**
-  → Create, modify, and read custom book lists
-
----
-
-### 🔎 Data Retrieval APIs
-
-* **Work & Edition APIs**
-  → Get detailed info about specific books or editions
-
-* **Authors API**
-  → Fetch author details and their works
-
-* **Subjects API**
-  → Browse books by categories/genres
-
----
-
-### 🔄 System API
-
-* **Recent Changes API**
-  → Access updates and changes across Open Library
+* **Book Search API** – Search books and authors
+* **Search Inside API** – Find books using a line
+* **Covers API** – Display book cover images
+* **Authors API** – Get author details
+* **Subjects API** – Filter books by category
 
 ---
 
 ### ⚙️ API Type
 
-* RESTful APIs (JSON-based responses)
-
----
-
-## 💡 Additional Features (Optional Enhancements)
-
-* 🔖 Bookmark/Favorite books
-* 🌙 Dark mode
-* ⭐ User ratings & reviews
-* 📊 Trending or recommended books
-* 🔐 User login/signup system
-* 📥 Add your own books (admin feature)
+* REST APIs (JSON data)
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** HTML, CSS, JavaScript
-* **Backend (optional):** Node.js / Express
-* **APIs:** Open Library APIs
-* **Database (optional):** MongoDB / Firebase
+* **HTML** – Structure of the website
+* **CSS** – Styling (basic level)
+* **JavaScript** – Functionality and API calls
+
+---
+
+## 📦 Project Structure
+
+```
+BookVerse/
+│── index.html
+│── style.css
+│── script.js
+│── /assets
+```
 
 ---
 
 ## ⚙️ How It Works
 
-1. User enters a search query (title, author, or book line).
-2. The app sends a request to Open Library APIs.
-3. Data is fetched and processed.
-4. Results are displayed with sorting and filtering options.
+1. User enters a search query
+2. JavaScript sends a request to Open Library API
+3. Data is received in JSON format
+4. Results are displayed on the webpage
 
 ---
 
-## 🔎 Example Use Case
+## 🔎 Example
 
 * User types:
-  `"It was the best of times"`
-* The system searches using **Search Inside API** and returns matching books.
+  `"Harry Potter"` → shows related books
+
+* User types:
+  `"It was the best of times"` → finds matching book
 
 ---
 
 ## 🎯 Learning Objectives
 
-* Work with REST APIs
-* Handle asynchronous JavaScript (fetch API)
-* Implement search & filtering logic
-* Build responsive UI
+* Learn how to use APIs
+* Understand basic JavaScript (fetch)
+* Practice HTML & CSS
+* Build a simple working website
 
 ---
 
 ## 📌 Future Improvements
 
-* AI-based book recommendations
-* Advanced full-text search
-* Personal dashboards
-* Mobile app version
+* Add login/signup
+* Add favorites/bookmarks
+* Improve UI design
+* Add more filters
 
 ---
 
 ## 🙌 Acknowledgment
 
-* Data provided by **Open Library**
-* Built for academic learning (WAP course)
+* Data provided by Open Library
+* Created for WAP academic project

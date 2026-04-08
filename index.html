@@ -3,56 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Search - Minimal</title>
+    <title>BookVerse - Smart Book Collection</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Link to custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Logo -->
+     <link rel="icon" type="image" href="./logo.png">
 </head>
 <body>
     <!-- App Header -->
     <header class="app-header">
         <div class="header-container">
             <div>
-                <h1 class="logo">📚 Book Search</h1>
-                <p class="subtitle">Find your next book</p>
+                <h1 class="logo"><img src="./logo.png">BookVerse</h1>
+                <p class="subtitle">Discover your next great read</p>
+            </div>
+            
+            <!-- Header Actions -->
+            <div class="header-actions">
+                <button id="viewFavoritesBtn" class="header-btn">❤️ My Favorites</button>
+                <button id="themeToggleBtn" class="header-btn theme-toggle">🌙</button>
             </div>
         </div>
     </header>
 
     <!-- Main Content Area -->
     <main class="main-content">
-        <!-- Search Section -->
-        <section class="controls-section">
+        <!-- Search and Controls Section (Hidden when in Favorites mode) -->
+        <section id="controlsSection" class="controls-section">
             <div class="search-bar-wrapper">
-                <input type="text" id="searchInput" placeholder="Search for books by title, author, or keyword..." class="search-input">
+                <select id="searchType" class="control-select">
+                    <option value="q">Keyword Search</option>
+                    <option value="title">Search by Title</option>
+                    <option value="author">Search by Author</option>
+                    <option value="text">Line from a Book</option>
+                </select>
+                <input type="text" id="searchInput" placeholder="Search for books..." class="search-input">
                 <button id="searchBtn" class="primary-btn">Search</button>
+            </div>
+
+            <!-- Filters and Sort -->
+            <div class="filter-sort-wrapper">
+                <div class="filters" id="categoryFilters">
+                    <button class="filter-btn active" data-category="">All</button>
+                    <button class="filter-btn" data-category="fiction">Fiction</button>
+                    <button class="filter-btn" data-category="science">Science</button>
+                    <button class="filter-btn" data-category="history">History</button>
+                    <button class="filter-btn" data-category="romance">Romance</button>
+                    <button class="filter-btn" data-category="thriller">Thriller</button>
+                </div>
+                
+                <div class="sort-wrapper">
+                    <label for="sortSelect">Sort By:</label>
+                    <select id="sortSelect" class="control-select">
+                        <option value="relevance">Relevance</option>
+                        <option value="titleAsc">Title (A-Z)</option>
+                        <option value="authorAsc">Author (A-Z)</option>
+                    </select>
+                </div>
             </div>
         </section>
 
         <!-- Dynamic Results Area -->
         <section class="results-section">
+            <!-- Section Title (Used for Favorites view) -->
+            <h2 id="sectionTitle" class="section-title hidden">My Favorites</h2>
+
             <!-- Loading Indicator -->
             <div id="loadingIndicator" class="loading-state hidden">
                 <div class="spinner"></div>
-                <p>Searching Open Library...</p>
+                <p>Fetching books from Open Library...</p>
             </div>
 
             <!-- Empty / Error State -->
             <div id="emptyState" class="empty-state hidden">
                 <div class="empty-icon">📂</div>
                 <h2 id="emptyStateMessage">No books found.</h2>
-                <p id="emptyStateSubMessage">Try searching for a different keyword.</p>
+                <p id="emptyStateSubMessage">Try refining your search or exploring a different category.</p>
             </div>
 
             <!-- Books Grid -->
             <div id="booksGrid" class="books-grid">
-                <!-- Book Cards will be dynamically injected here -->
+                <!-- Book Cards will be dynamically injected here via JavaScript -->
+            </div>
+            
+            <!-- Load More Pagination (Hidden in Favorites mode) -->
+            <div class="pagination-wrapper">
+                <button id="loadMoreBtn" class="secondary-btn hidden">Load More Books</button>
             </div>
         </section>
     </main>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
 
     <!-- Link to custom JavaScript file -->
     <script src="script.js"></script>
